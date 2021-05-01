@@ -1,16 +1,32 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { EducationComponent } from './components/education/education.component';
+import { WorksComponent } from './components/works/works.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { PortfolioComponent } from './pages/portfolio/portfolio.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    AboutComponent,
+    SkillsComponent,
+    EducationComponent,
+    WorksComponent,
+    ContactComponent,
+    PortfolioComponent,
+    FooterComponent,
+    NavbarComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

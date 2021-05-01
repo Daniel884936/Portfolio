@@ -1,0 +1,43 @@
+<header class="l-header">
+  <nav class="nav bd-grid">
+      <div (click)="toggleNav()" class="nav__toggle" id="nav-toggle">
+          <i class="bx bx-menu"></i>
+      </div>
+
+      <div>
+          <a href="#" class="nav__logo">Erick Daniel Tejada</a>
+      </div>
+
+      <div class="nav__menu" #navMenu id="nav-menu">
+          <div class="nav__close" (click)="closeNav()" id="nav-close">
+              <i class="bx bx-x"></i>
+          </div>
+          <ul class="nav__list">
+              <li class="nav__item"><a href="#home"
+                (click)="closeNav()"
+                class="nav__link"
+                [class.active]="currentActive === 1" >Home</a></li>
+              <li class="nav__item"><a href="#about"
+                (click)="closeNav()"
+                class="nav__link"
+                [class.active]="currentActive === 2"  >About</a></li>
+              <li class="nav__item"><a href="#skills"
+                (click)="closeNav()"
+                class="nav__link"
+                [class.active]="currentActive === 3" >Skills</a></li>
+              <li class="nav__item"><a href="#education"
+                (click)="closeNav()"
+                class="nav__link"
+                [class.active]="currentActive === 4" >Skills</a></li>
+              <li class="nav__item"><a href="#works"
+                (click)="closeNav()"
+                class="nav__link"
+                [class.active]="currentActive === 5"  >Works</a></li>
+              <li class="nav__item"><a href="#contact"
+                (click)="closeNav()"
+                class="nav__link"
+                [class.active]="currentActive === 6">Contact</a></li>
+          </ul>
+      </div>
+  </nav>
+</header>
