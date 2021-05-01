@@ -493,8 +493,6 @@ img{
 
 
 
-
-
 /* ===== SERVICES =====*/
 
 
@@ -539,6 +537,11 @@ img{
 
 .works__title{
   font-size: var(--h2-font-size);
+  color: var(--first-color-lighten);
+}
+
+.works__description{
+  font-size: var(--smaller-font-size);
   color: var(--first-color-lighten);
 }
 
