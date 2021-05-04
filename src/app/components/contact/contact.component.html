@@ -5,13 +5,41 @@
   <h2 class="section-title">Get In Touch</h2>
   <div class="contact__container bd-grid">
 
-      <form action="" class="contact__fomr">
+      <form action="" [formGroup] = "form" lass="contact__fomr">
       <div class="contact__inpits">
-          <input type="text" placeholder="Name" class="contact__input">
-          <input type="mail" placeholder="Email" class="contact__input">
-      </div>
+        <div class="contact__group">
+          <input  type="text"
+                  placeholder="Name"
+                  [class.contact__input-invalid]="hasAnyError('name') "
+                  class="contact__input contact__input-invalid"
+                  formControlName="name" >
+          <small *ngIf="hasRequieredError('name')"
+                 class="contact__text-danger">*Required</small>
+        </div>
+        <div class="contact__group">
+          <input type="mail"
+                 placeholder="Email"
+                 [class.contact__input-invalid]="hasAnyError('email') "
+                 class="contact__input"
+                 formControlName="email">
+          <small *ngIf="hasRequieredError('email')"
+                 class="contact__text-danger">*Required</small>
+          <small *ngIf="hasEmailError('email')"
+                 class="contact__text-danger">Invalid email format</small>
+        </div>
 
-      <textarea name="" id="" cols="0" rows="10" placeholder="Message" class="contact__input"></textarea>
+      </div>
+      <div class="contact__group">
+        <textarea name=""
+                  cols="0"
+                  rows="10"
+                  formControlName="description"
+                  [class.contact__input-invalid]="hasAnyError('name') "
+                  placeholder="Message"
+                  class="contact__input"></textarea>
+        <small  *ngIf="hasRequieredError('description')"
+                class="contact__text-danger">*Required</small>
+      </div>
 
       <input type="submit" value="Send Message" class="button contact__button">
   </form>

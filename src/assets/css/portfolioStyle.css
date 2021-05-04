@@ -570,8 +570,19 @@ img{
   font-family: var(--body-font);
   background-color: var(--first-light);
   font-size: var(--normal-font-size);
-  margin-bottom: var(--mb-2);
   border-radius: .5rem;
+  transition: .3s;
+}
+
+.contact__group{
+  margin-bottom: var(--mb-2);
+}
+.contact__text-danger{
+  color: rgb(189, 26, 58);
+}
+
+.contact__input-invalid{
+  border: 1px solid rgb(189, 26, 58);
 }
 
 textarea.contact__input{

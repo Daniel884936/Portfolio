@@ -41,7 +41,6 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
 
   @HostListener('window:scroll', ['$event'])
   checkOffsetTop() {
-    console.log('hola');
     if (window.pageYOffset>= this.homeOffset && window.pageYOffset < this.aboutOffset) {
       this.currentActive.emit(1);
     } else if (window.pageYOffset >= this.aboutOffset && window.pageYOffset < this.skillsOffset) {
