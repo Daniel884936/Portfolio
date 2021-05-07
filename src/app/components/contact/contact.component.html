@@ -10,6 +10,7 @@
         <div class="contact__group">
           <input  type="text"
                   placeholder="Name"
+                  name="user_name"
                   [class.contact__input-invalid]="hasAnyError('name') "
                   class="contact__input contact__input-invalid"
                   formControlName="name" >
@@ -19,6 +20,7 @@
         <div class="contact__group">
           <input type="mail"
                  placeholder="Email"
+                 name="user_email"
                  [class.contact__input-invalid]="hasAnyError('email') "
                  class="contact__input"
                  formControlName="email">
@@ -33,8 +35,9 @@
         <textarea name=""
                   cols="0"
                   rows="10"
+                  name="message"
                   formControlName="description"
-                  [class.contact__input-invalid]="hasAnyError('name') "
+                  [class.contact__input-invalid]="hasAnyError('description') "
                   placeholder="Message"
                   class="contact__input"></textarea>
         <small  *ngIf="hasRequieredError('description')"
@@ -64,3 +67,6 @@
   </div>
 
 </section>
+
+
+
