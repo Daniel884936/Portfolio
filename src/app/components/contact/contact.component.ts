@@ -54,6 +54,13 @@ export class ContactComponent implements OnInit {
   }
 
   public sendEmail(e: Event) {
+    Swal.fire({
+      icon: 'info',
+      title: 'Please wait',
+      text: 'Sending infotmation'
+    });
+    Swal.showLoading();
+    
     const emailConfig = env.emailCofig;
     emailjs.sendForm(emailConfig.SERVICE_ID, emailConfig.TEMPLATE_ID, e.target as HTMLFormElement, env.emailCofig.USER_ID)
       .then((result: EmailJSResponseStatus) => {
@@ -61,7 +68,13 @@ export class ContactComponent implements OnInit {
         this.form.reset();
         this.displaySuccessMixinDialog('Sended successfully');
       }, (error) => {
-         this.displayErrorDialog(error.text)
+
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: error.text
+        });
+         this.form.reset();
         console.log(error.text);
       });
   }
@@ -82,14 +95,6 @@ export class ContactComponent implements OnInit {
     Toast.fire({
       icon: 'success',
       title: message
-    })
-  }
-
-  private  displayErrorDialog(message:string){
-    Swal.fire({
-      icon: 'error',
-      title: 'Oops...',
-      text: message
     })
   }
 
