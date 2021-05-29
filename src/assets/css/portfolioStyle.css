@@ -496,6 +496,10 @@ img{
   transform: translate(5px, -4px);
 }
 
+.education__link{
+  font-size: 12px;
+  color: rgb(27, 27, 235);
+}
 
 
 /* ===== SERVICES =====*/
